@@ -1,7 +1,9 @@
-<script lang="ts"></script>
+<script lang="ts">
+    export let value: string | number;
+</script>
 
 <label><slot /></label>
-<input type="text" />
+<input bind:value type="text" />
 
 <style>
     input {
