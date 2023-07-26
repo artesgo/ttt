@@ -5,9 +5,8 @@
     }
 </script>
 
+Changes in a branch
 <div> Cookies: {cookie} </div>
-
-artesgo
 
 <button class="cookie" on:click={() => rnjesus()}> Cookie </button>
 <button> Grandma </button>
