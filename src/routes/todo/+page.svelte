@@ -1,9 +1,8 @@
 <script lang="ts">
-    import Button from "$lib/button.svelte";
-    import Input from "$lib/input.svelte";
     import type { Todo } from "$lib/todo";
+    import { Button, Checkbox, TextInput } from "carbon-components-svelte";
     import { onMount } from "svelte";
-    import { v4 } from 'uuid';
+    import { v4 } from 'uuid'; // <<<<<<
 
     let description: string;
     const _todoKeys = 'applings-todo-keys';
@@ -11,11 +10,11 @@
     let keys: string[] = [];
 
     function newItem() {
-        // new TODO
+        // new TODOs
         const todo: Todo = {
             done: false,
             description: description,
-            key: v4()
+            key: v4() // <<<<<<
         }
 
         // spread operation
@@ -31,15 +30,16 @@
         keys = JSON.parse(localStorage.getItem(_todoKeys) as string);
 
         // maps are tranformation
-        todos = keys.map((key) => {
-            return JSON.parse(localStorage.getItem(key) as string);
-        });
-
-        console.log(todos);
+        if (keys && keys.length) {
+            todos = keys.map((key) => {
+                return JSON.parse(localStorage.getItem(key) as string);
+            });
+        }
     })
 
-    function doneItem() {
-
+    function doneItem(todo: Todo) {
+        // console.log(todo);
+        localStorage.setItem(todo.key, JSON.stringify(todo)); // from newItem(...);
     }
 
     function deleteItem(key: string) {
@@ -58,14 +58,35 @@
     }
 </script>
 
-<Input bind:value={description}>New TODO</Input>
-<Button on:click={() => newItem() }>Create Todo</Button>
+<div class="flex controls">
+    <TextInput bind:value={description}>New TODO</TextInput>
+    <Button size="field" on:click={() => newItem() }>Create Todo</Button>
+</div>
 
 {#each todos as item}
-    <div>
-        {item.description}
+    <div class="flex">
+        <Checkbox
+            bind:checked={item.done}
+            on:change={() => doneItem(item)}
+            labelText={item.description}
+        >
+        </Checkbox>
         <Button on:click={() => deleteItem(item.key)}>Delete</Button>
     </div>
 {:else}
     You've completed all your tasks!
 {/each}
+
+<style>
+    .flex {
+        display: flex;
+        justify-content: flex-start;
+        /* centers things vertically */
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .controls {
+        margin-bottom: 20px;
+    }
+</style>

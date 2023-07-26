@@ -12,6 +12,9 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"artesgo-holokit": "^1.4.3",
+		"carbon-components-svelte": "^0.78.0",
+		"sass": "^1.63.6",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"tslib": "^2.4.1",

@@ -1,5 +1,6 @@
 <script>
-    import './app.css';
+    import './app.scss';
+    import { Card } from 'artesgo-holokit';
 </script>
 
 <nav>
@@ -8,7 +9,11 @@
     <a href="/tictactoe">tic tac toe</a>
 </nav>
 
-<slot />
+<main>
+    <Card>
+        <slot />
+    </Card>
+</main>
 
 <style>
     nav {
@@ -20,5 +25,10 @@
         /* margin: 100px; */
         border: 1px dashed;
         padding: 10px 20px;
+    }
+
+    main {
+        width: 80%;
+        margin: 10px auto;
     }
 </style>

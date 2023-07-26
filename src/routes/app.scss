@@ -1,0 +1,17 @@
+@import 'artesgo-holokit/index.scss';
+@import 'artesgo-holokit/myth.scss';
+// @import "carbon-components-svelte/css/white.css";
+@import "carbon-components-svelte/css/g100.css";
+
+@font-face {
+    font-family: 'Quicksand';
+    src: local('Quicksand'), url('/Quicksand/static/Quicksand-Regular.ttf');
+}
+
+* {
+    font-family: 'Quicksand';
+}
+// if you have issues with the browser that says something is missing dependency "sass"
+// go to your terminal and run `npm i -D sass`
+
+// if it says [sass] missing ';'. it means you're missing a semi colon in your style sheet

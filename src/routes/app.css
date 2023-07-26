@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'Quicksand';
-    src: local('Quicksand'), url('/Quicksand/static/Quicksand-Regular.ttf');
-}
-
-* {
-    font-family: 'Quicksand';
-}
