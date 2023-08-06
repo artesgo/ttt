@@ -6,6 +6,7 @@
 <nav>
     <a href="/">home</a>
     <a href="/todo">todo</a>
+    <a href="/portfolio">Portfolio</a>
     <a href="/tictactoe">tic tac toe</a>
 </nav>
 

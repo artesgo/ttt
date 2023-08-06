@@ -126,16 +126,17 @@
 {/if}
 
 <!-- just added this -->
-<Button>Hello</Button>
+<!-- <Button>Hello</Button>
 <Input>World</Input>
-<Checkbox>Hi Again</Checkbox>
+<Checkbox>Hi Again</Checkbox> -->
 
 <style>
     button {
         width: 100px;
         height: 100px;
         color: #333333;
-        background: lightgreen;
+        border: 1px solid black;
+        background: #ededed;
     }
 
     div {
