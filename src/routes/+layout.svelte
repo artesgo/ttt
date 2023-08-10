@@ -1,13 +1,14 @@
 <script>
+    import { base } from '$app/paths';
     import './app.scss';
     import { Card } from 'artesgo-holokit';
 </script>
 
 <nav>
-    <a href="/">home</a>
-    <a href="/todo">todo</a>
-    <a href="/portfolio">Portfolio</a>
-    <a href="/tictactoe">tic tac toe</a>
+    <a href="{base}/">home</a>
+    <a href="{base}/todo">todo</a>
+    <a href="{base}/portfolio">Portfolio</a>
+    <a href="{base}/tictactoe">tic tac toe</a>
 </nav>
 
 <main>
