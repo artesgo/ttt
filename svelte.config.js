@@ -15,7 +15,7 @@ const config = {
 			strict: false,
 			pages: 'docs',
       assets: 'docs',
-      fallback: undefined,
+      fallback: 'index.html',
       precompress: false,
 		}),
 		paths: {
