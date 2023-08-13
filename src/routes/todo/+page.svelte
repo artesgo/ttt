@@ -42,18 +42,18 @@
         localStorage.setItem(todo.key, JSON.stringify(todo)); // from newItem(...);
     }
 
-    function deleteItem(key: string) {
+    function deleteItem(keyToDelete: string) {
         // use the key parameter to look inside our keys / todos array to remove item
         keys = keys.filter((_key) => {
             // filter loops through the keys array and each _key is then compared against our func param
-            return key !== _key;
+            return keyToDelete !== _key;
         });
 
         todos = todos.filter((_todo) => {
-            return key !== _todo.key;
+            return keyToDelete !== _todo.key;
         });
 
-        localStorage.removeItem(key);
+        localStorage.removeItem(keyToDelete);
         localStorage.setItem(_id, JSON.stringify(keys));
     }
 </script>
@@ -64,7 +64,7 @@
 </div>
 
 {#each todos as item}
-    <div class="flex">
+    <div class="flex" class:done={item.done}>
         <Checkbox
             bind:checked={item.done}
             on:change={() => doneItem(item)}
@@ -76,14 +76,22 @@
     You've completed all your tasks!
 {/each}
 
+<!-- find out how to make random colors -->
+
 <style>
+     /* the . is targetting a class in your html */
     .flex {
         display: flex;
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
         /* centers things vertically */
         align-items: center;
         margin-bottom: 10px;
+        border: 1px solid;
     }
+
+    /* .done {
+        background-color: #3cf060;
+    } */
 
     .controls {
         margin-bottom: 20px;
