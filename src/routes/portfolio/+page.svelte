@@ -1,9 +1,3 @@
-<!-- fancy styles page -->
-<!-- 
-    demonstrate some of the stuff that
-    we learn about html css 
-    javascript
--->
 <h1>Portfolio Page</h1>
 
 <div class="portfolio">
@@ -42,7 +36,22 @@
 <style>
     .portfolio {
         display: flex;
-        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* media query : in this case, max-width means max size */
+    @media (max-width: 1000px) {
+        .portfolio {
+            /* if the max size is less than 1000 as stated above */
+            /* we apply this flex direction property */
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flex-row {
+            margin-bottom: 20px;
+        }
     }
 
     .flex-row {
@@ -54,6 +63,9 @@
         height: 175px;
         overflow: hidden;
         position: relative;
+        border-radius: 6px;
+        box-shadow: 4px 4px 4px #888;
+        /* #RRGGBB */
     }
 
     h2 {
@@ -63,11 +75,9 @@
         color: white;
     }
 
-    li {
-        width: 300px; 
-    }
-
     ul {
+        width: 300px;
         list-style: circle;
+        padding-left: 16px 
     }
 </style>

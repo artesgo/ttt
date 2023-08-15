@@ -42,7 +42,9 @@
 <div> Cookies: {cookie} </div>
 <div> Grandmas: {grandma} </div>
 
-<button class="cookie" on:click={() => addCookie(1)}> Cookie </button>
+<button class="cookie" on:click={() => addCookie(1)} >
+    <img src="./cookie.jpg" alt="cookie" >
+</button>
 <button on:click={() => addGrandma() }> Grandma </button>
 <button class="mine"> Mine </button>
 
@@ -51,6 +53,16 @@
         border: 1px solid;
         border-radius: 50%;
         height: 50px;
-        width: 50px;
+        width: 50px;    
+        overflow: hidden;
+        position: relative;
+    }
+
+    img {
+        /* this is required because our image isn't clean */
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        width: 90px;
     }
 </style>
