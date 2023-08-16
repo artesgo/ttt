@@ -1,6 +1,14 @@
+<script>
+  import Parallax from "$lib/parallax.svelte";
+  import Parallaxplus from "$lib/parallaxplus.svelte";
+</script>
+
 <h1>Portfolio Page</h1>
 
 <div class="portfolio">
+    <Parallaxplus>
+        Photo by <a href="https://unsplash.com/@andyjh07?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andy Holmes</a> on <a href="https://unsplash.com/photos/rCbdp8VCYhQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </Parallaxplus>
     <div class="flex-row">
         <div class="cut-off">
             <img width="300px" src="./photo-1572985025058-f27aeca1b8bf.avif" alt="" />
@@ -11,6 +19,7 @@
             <li>css properties like display, border, margins, etc</li>
         </ul>
     </div>
+    <Parallax />
     <div class="flex-row">
         <div class="cut-off">
             <img width="300px" src="./photo-starbucks.avif" alt="" />
@@ -21,6 +30,7 @@
             <li>parameters are part of the function signature that the function uses</li>
         </ul>
     </div>
+    <Parallax />
     <div class="flex-row">
         <div class="cut-off">
             <img width="300px" src="./premium_html.avif" alt="" />
@@ -31,13 +41,15 @@
             <li>it contains the elements that we use to build the web</li>
         </ul>
     </div>
+    <Parallax />
 </div>
 
 <style>
     .portfolio {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
     }
 
     /* media query : in this case, max-width means max size */
@@ -50,7 +62,7 @@
         }
 
         .flex-row {
-            margin-bottom: 20px;
+            margin-bottom: 100px;
         }
     }
 
@@ -64,6 +76,8 @@
         overflow: hidden;
         position: relative;
         border-radius: 6px;
+        margin-top: 100px;
+        margin-bottom: 20px;
         box-shadow: 4px 4px 4px #888;
         /* #RRGGBB */
     }
@@ -78,6 +92,7 @@
     ul {
         width: 300px;
         list-style: circle;
-        padding-left: 16px 
+        padding-left: 16px;
+        margin-bottom: 100px;
     }
 </style>
